@@ -12,6 +12,7 @@ The name MutPanning is inspired by the words "mutation" and "panning". The goal 
 The ability to detect driver genes can be increased by considering the nucleotide context around mutations in the statistical model. MutPanning utilizes the observation that most passenger mutations are surrounded by characteristic nucleotide sequence contexts, reflecting the background mutational process active in a given tumor. In contrast, driver mutations are localized towards functionally important positions, which are not necessarily surrounded by the same nucleotide contexts as passenger mutations. Hence, in addition to mutational excess, MutPanning searches for genes with an excess of mutations in unusual sequence contexts that deviate from the characteristic sequence context around passenger mutations. That way, MutPanning actively suppresses mutations in its test statistics that are likely to be passenger mutations based on their surrounding nucleotide contexts. Considering the nucleotide context is particularly useful in tumor types with high background mutation rates and high nucleotide context specificity (e.g., melanoma, bladder, endometrial, or colorectal cancer).
 
 ALGORITHM
+ 
 Most passenger mutations occur in characteristic nucleotide contexts that reflect the mutational process active in a given tumor. MutPanning searches for mutations in “unusual” nucleotide contexts that deviate from this background mutational process. In these positions, passenger mutations are rare and mutations are thus a strong indicator of the shift of driver mutations towards functionally important positions.
  
 The main steps of MutPanning are as follows (adopted from Dietlein et al.): 
@@ -21,10 +22,12 @@ The main steps of MutPanning are as follows (adopted from Dietlein et al.):
 (iv) Combine this p-value with additional statistical components that account for insertions and deletions, the abundance of deleterious mutations, and mutational clustering.
 
 USAGE
+ 
 You can run the algorithm for multiple cancer types at the same time. All you need to run MutPanning is a mutation file (*.maf) and a sample file (*.txt):
 - Mutation File (*.maf): mutations that you would like to include in the analysis 
 - Sample File (*.txt): contains sample IDs and assocates them with cancer types 
 Unless you are familiar with the MutPanning algorithm, we recommend running MutPanning with standard parameters. MutPanning was only tested to run with standard parameters. A precompiled desktop version of MutPanning is available on cancer-genes.org. In addition, MutPanning can be run as a module on genepattern.org
 
 REFERENCES
+ 
 Dietlein F, Weghorn D, Taylor-Weiner A, Richters A, et al. Identification of cancer driver genes based on nucleotide context. Under review. (preprint available on biorxiv)
