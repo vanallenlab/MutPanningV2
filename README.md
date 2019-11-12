@@ -32,28 +32,39 @@ COMPILATION AND EXECUTION OF THE SOURCE CODE IN THIS REPOSITORY
 
 Precompiled files of the interactive desktop version of MutPanning can be downloaded from www.cancer-genes.org (section "Downloads") as well as the supplement of our paper (Dietlein et al., cf. below). Furthermore, MutPanning can be run as an online module on the GenePattern platform. If you prefer to compile and execute MutPanning from scratch (e.g., to make changes to the source code, to change the memory usage of MutPanning, or to run MutPanning via the command line), please follow the instructions in this section.
 In order to compile the source code on your computer, the Java Development Kit (JDK) needs to be installed. If you are unsure whether JDK is installed on your computer, you can check the java version with the command
+
 java -version
 
 1.) Download the source code on your local computer. Click on "Clone or download" (green button at the top right of this page) and click on "Download ZIP" in the dropdown menu. Unzip the zip file, which creates a folder named "MutPanningV2-master" on your computer.
-
 2.) On your local computer, open the command line (e.g., Terminal on macOS). Store the folder name where you downloaded the source code in the variable $ff via the command
-ff="<folder name>"
+
+ff="*folder name*"
+
 For instance, on my computer:
+
 ff="/Users/fdietlein/Downloads/MutPanningV2-master/"
 
 3.) Compile your source code via the command
-javac -classpath $ff/commons-math3-3.6.1.jar:$ff/jdistlib-0.4.5-bin.jar $ff/*.java
+
+javac -classpath $ff/commons-math3-3.6.1.jar:$ff/jdistlib-0.4.5-bin.jar $ff/\*.java
+
 Alternatively, you can replace all occurrences of $ff with the folder name. For instance, on my computer:
-javac -classpath /Users/fdietlein/Downloads/MutPanningV2-master/commons-math3-3.6.1.jar:/Users/fdietlein/Downloads/MutPanningV2-master/jdistlib-0.4.5-bin.jar /Users/fdietlein/Downloads/MutPanningV2-master/*.java
+
+javac -classpath /Users/fdietlein/Downloads/MutPanningV2-master/commons-math3-3.6.1.jar\:/Users/fdietlein/Downloads/MutPanningV2-master/jdistlib-0.4.5-bin.jar /Users/fdietlein/Downloads/MutPanningV2-master/\*.java
+
+
 This command will compile all Java source code files in the folder $ff (e.g., on my computer /Users/fdietlein/Downloads/MutPanningV2-master/) using the libraries commons-math3-3.6.1.jar and jdistlib-0.4.5-bin.jar, which are passed to the compiler through the classpath argument.
 
 4.) After the compilation of the source code, you can choose between two versions of MutPanning to execute. A) the interactive desktop version, which is equivalent to the version provided on cancer-genes.org and the paper supplement; B) a command-line version, which allows you to pass all the arguments through the command line directly. These arguments need to be manually entered through the dialog window in version A.
 
 A) To execute the desktop version:
-java -Xmx8G -classpath $ff/commons-math3-3.6.1.jar:$ff/jdistlib-0.4.5-bin.jar:$ff MutPanningDesktop
+
+java -Xmx8G -classpath $ff/commons-math3-3.6.1.jar\:$ff/jdistlib-0.4.5-bin.jar\:$ff MutPanningDesktop
+
 Variable $ff contains the folder where you downloaded the source code and was defined in step 2.
 Alternatively, you can replace all occurrences of $ff by the folder name. For instance, on my computer:
-java -Xmx8G -classpath /Users/fdietlein/Downloads/MutPanningV2-master/commons-math3-3.6.1.jar:/Users/fdietlein/Downloads/MutPanningV2-master/jdistlib-0.4.5-bin.jar:/Users/fdietlein/Downloads/MutPanningV2-master/ MutPanningDesktop
+
+java -Xmx8G -classpath /Users/fdietlein/Downloads/MutPanningV2-master/commons-math3-3.6.1.jar\:/Users/fdietlein/Downloads/MutPanningV2-master/jdistlib-0.4.5-bin.jar\:/Users/fdietlein/Downloads/MutPanningV2-master/ MutPanningDesktop
 
 This command executes the class MutPanningDesktop and uses the libraries commons-math3-3.6.1.jar and jdistlib-0.4.5-bin.jar that are passed through the classpath argument. The argument -Xmx8G regulates the memory usage of MutPanning (maximum 8GB). In our tests, this argument worked for all maf files, including large maf files with >10,000 samples. If you process small maf files, you can reduce the memory usage of MutPanning (e.g., -Xmx4G to allocate 4GB). If you use larger maf files than used in our study, you may consider increasing the memory allocated to MutPanning (e.g., -Xmx16G to allocate 16GB). Upon execution of this command, a dialog window will open that guides you through the execution of MutPanning. Upon completion, the dialog window will automatically redirect you to the final results files.
 
