@@ -35,15 +35,18 @@ In order to compile the source code on your computer, the Java Development Kit (
 java -version
 
 1.) Download the source code on your local computer. Click on "Clone or download" (green button at the top right of this page) and click on "Download ZIP" in the dropdown menu. Unzip the zip file, which creates a folder named "MutPanningV2-master" on your computer.
+
 2.) On your local computer, open the command line (e.g., Terminal on macOS). Store the folder name where you downloaded the source code in the variable $ff via the command
 ff="<folder name>"
 For instance, on my computer:
 ff="/Users/fdietlein/Downloads/MutPanningV2-master/"
+
 3.) Compile your source code via the command
 javac -classpath $ff/commons-math3-3.6.1.jar:$ff/jdistlib-0.4.5-bin.jar $ff/*.java
 Alternatively, you can replace all occurrences of $ff with the folder name. For instance, on my computer:
 javac -classpath /Users/fdietlein/Downloads/MutPanningV2-master/commons-math3-3.6.1.jar:/Users/fdietlein/Downloads/MutPanningV2-master/jdistlib-0.4.5-bin.jar /Users/fdietlein/Downloads/MutPanningV2-master/*.java
 This command will compile all Java source code files in the folder $ff (e.g., on my computer /Users/fdietlein/Downloads/MutPanningV2-master/) using the libraries commons-math3-3.6.1.jar and jdistlib-0.4.5-bin.jar, which are passed to the compiler through the classpath argument.
+
 4.) After the compilation of the source code, you can choose between two versions of MutPanning to execute. A) the interactive desktop version, which is equivalent to the version provided on cancer-genes.org and the paper supplement; B) a command-line version, which allows you to pass all the arguments through the command line directly. These arguments need to be manually entered through the dialog window in version A.
 
 A) To execute the desktop version:
